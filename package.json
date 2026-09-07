@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build":"vite build",
+    "build": "vite build",
     "dev": "concurrently \"npm --prefix frontend run dev\" \"npm --prefix backend run dev\""
   },
   "devDependencies": {
+    "concurrently": "^9.2.1",
     "gh-pages": "^6.3.0",
-    "concurrently": "^9.2.1"
+    "nodemon": "^3.1.14",
+    "vite": "^8.2.2"
   }
 }
