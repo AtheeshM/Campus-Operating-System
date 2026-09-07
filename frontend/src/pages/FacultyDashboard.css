@@ -1,0 +1,1867 @@
+/* =========================================================
+   CAMPUSOS — FACULTY DASHBOARD
+   Premium Academic Command Center
+   ========================================================= */
+
+.faculty-app {
+  min-height: 100vh;
+  display: flex;
+  background:
+    radial-gradient(
+      circle at 78% 0%,
+      rgba(124, 58, 237, 0.07),
+      transparent 28%
+    ),
+    #f5f7fb;
+  color: #172033;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.faculty-sidebar {
+  width: 250px;
+  min-width: 250px;
+  min-height: 100vh;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 24px 14px;
+
+  background: #111827;
+  color: #ffffff;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.faculty-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 3px 10px 28px;
+}
+
+.faculty-brand-logo {
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 13px;
+
+  background: linear-gradient(135deg, #ffffff, #dbe3f0);
+  color: #111827;
+
+  font-size: 20px;
+  font-weight: 800;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.faculty-brand h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 18px;
+  font-weight: 750;
+  letter-spacing: -0.4px;
+}
+
+.faculty-brand span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #9ca3af;
+
+  font-size: 10px;
+  letter-spacing: 0.35px;
+}
+
+.faculty-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.faculty-nav-item {
+  width: 100%;
+  min-height: 44px;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  border: 0;
+  border-radius: 11px;
+
+  background: transparent;
+
+  padding: 11px 13px;
+
+  text-align: left;
+  cursor: pointer;
+
+  color: #9ca3af;
+
+  font-size: 12px;
+  font-weight: 550;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.faculty-nav-item:hover {
+  background: rgba(255, 255, 255, 0.07);
+  color: #ffffff;
+  transform: translateX(2px);
+}
+
+.faculty-nav-item.active {
+  background: #ffffff;
+  color: #111827;
+
+  font-weight: 700;
+
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.14);
+}
+
+.faculty-sidebar-bottom {
+  margin-top: auto;
+}
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.faculty-main {
+  flex: 1;
+  min-width: 0;
+
+  padding: 0 32px 42px;
+}
+
+/* =========================================================
+   TOPBAR
+   ========================================================= */
+
+.faculty-topbar {
+  min-height: 78px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 0;
+
+  border-bottom: 1px solid #e7eaf0;
+}
+
+.faculty-page-label,
+.faculty-panel-header p,
+.faculty-eyebrow {
+  margin: 0 0 6px;
+
+  color: #7c3aed;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+
+  text-transform: uppercase;
+}
+
+.faculty-topbar h2 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 24px;
+  font-weight: 780;
+  letter-spacing: -0.7px;
+}
+
+.faculty-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.faculty-profile strong {
+  display: block;
+
+  color: #172033;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.faculty-profile span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #98a2b3;
+
+  font-size: 10px;
+}
+
+.faculty-avatar {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: #111827;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 750;
+}
+
+/* =========================================================
+   WELCOME HERO
+   ========================================================= */
+
+.faculty-welcome {
+  position: relative;
+  overflow: hidden;
+
+  margin-top: 24px;
+  margin-bottom: 18px;
+
+  padding: 28px 30px;
+
+  border: 1px solid #e4e7ee;
+  border-radius: 19px;
+
+  background:
+    radial-gradient(
+      circle at 88% 15%,
+      rgba(124, 58, 237, 0.11),
+      transparent 30%
+    ),
+    linear-gradient(135deg, #ffffff, #fafbfc);
+
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.05);
+}
+
+.faculty-welcome::after {
+  content: "";
+
+  position: absolute;
+
+  width: 190px;
+  height: 190px;
+
+  right: -100px;
+  bottom: -110px;
+
+  border-radius: 50%;
+
+  background: rgba(17, 24, 39, 0.035);
+}
+
+.faculty-welcome h3 {
+  position: relative;
+  z-index: 1;
+
+  margin: 0 0 8px;
+
+  color: #111827;
+
+  font-size: 27px;
+  font-weight: 780;
+  letter-spacing: -1px;
+}
+
+.faculty-welcome p:last-child {
+  position: relative;
+  z-index: 1;
+
+  max-width: 700px;
+
+  margin: 0;
+
+  color: #667085;
+
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.faculty-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
+
+  margin-bottom: 18px;
+}
+
+.faculty-stat-card {
+  position: relative;
+  overflow: hidden;
+
+  padding: 20px;
+
+  border: 1px solid #e5e8ef;
+  border-radius: 15px;
+
+  background: #ffffff;
+
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.035);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.faculty-stat-card:hover {
+  transform: translateY(-3px);
+
+  border-color: #d8dde6;
+
+  box-shadow: 0 15px 32px rgba(15, 23, 42, 0.07);
+}
+
+.faculty-stat-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 80px;
+  height: 80px;
+
+  right: -35px;
+  top: -35px;
+
+  border-radius: 50%;
+
+  background: rgba(124, 58, 237, 0.055);
+}
+
+.faculty-stat-card span {
+  position: relative;
+  z-index: 1;
+
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #98a2b3;
+
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: 0.7px;
+
+  text-transform: uppercase;
+}
+
+.faculty-stat-card strong {
+  position: relative;
+  z-index: 1;
+
+  display: block;
+
+  color: #111827;
+
+  font-size: 25px;
+  font-weight: 780;
+  letter-spacing: -0.7px;
+}
+
+.faculty-stat-card p {
+  position: relative;
+  z-index: 1;
+
+  margin: 6px 0 0;
+
+  color: #98a2b3;
+
+  font-size: 10px;
+}
+
+/* =========================================================
+   COMMON PANELS
+   ========================================================= */
+
+.faculty-panel {
+  padding: 23px;
+
+  border: 1px solid #e4e7ee;
+  border-radius: 17px;
+
+  background: #ffffff;
+
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.035);
+}
+
+.faculty-panel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 16px;
+}
+
+.faculty-panel-header h4 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 16px;
+  font-weight: 750;
+  letter-spacing: -0.3px;
+}
+
+.faculty-panel-header small {
+  color: #98a2b3;
+
+  font-size: 10px;
+}
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.faculty-empty-state {
+  padding: 45px 15px;
+
+  text-align: center;
+}
+
+.faculty-empty-state h5 {
+  margin: 0 0 7px;
+
+  color: #172033;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.faculty-empty-state p {
+  margin: 0;
+
+  color: #98a2b3;
+
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+/* =========================================================
+   COURSE LIST
+   ========================================================= */
+
+.faculty-course-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+
+  margin-top: 18px;
+}
+
+.faculty-course-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 16px;
+
+  border: 1px solid #edf0f4;
+  border-radius: 12px;
+
+  background: #fafbfc;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.faculty-course-card:hover {
+  background: #ffffff;
+
+  border-color: #dce1e8;
+
+  transform: translateX(2px);
+
+  box-shadow: 0 7px 18px rgba(15, 23, 42, 0.045);
+}
+
+.faculty-course-code {
+  color: #7c3aed;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.9px;
+}
+
+.faculty-course-info {
+  min-width: 0;
+}
+
+.faculty-course-info h5 {
+  margin: 5px 0 4px;
+
+  color: #172033;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.faculty-course-info p {
+  margin: 0;
+
+  color: #8b93a5;
+
+  font-size: 10px;
+}
+
+.faculty-class-info {
+  min-width: 180px;
+
+  text-align: right;
+}
+
+.faculty-class-info span {
+  display: block;
+
+  color: #98a2b3;
+
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+.faculty-class-info strong {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #172033;
+
+  font-size: 11px;
+}
+
+.faculty-class-info small {
+  color: #98a2b3;
+
+  font-size: 9px;
+}
+
+/* =========================================================
+   COURSE ACTIONS
+   ========================================================= */
+
+.faculty-course-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+
+  margin-top: 13px;
+}
+
+.faculty-course-actions .faculty-upload-button {
+  margin-top: 0;
+}
+
+.faculty-upload-button,
+.faculty-assignment-button {
+  border: 0;
+  border-radius: 8px;
+
+  padding: 9px 13px;
+
+  cursor: pointer;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.faculty-upload-button {
+  background: #111827;
+  color: #ffffff;
+}
+
+.faculty-upload-button:hover {
+  background: #1f2937;
+  transform: translateY(-1px);
+}
+
+.faculty-assignment-button {
+  background: #eef1f5;
+  color: #20242c;
+}
+
+.faculty-assignment-button:hover {
+  background: #e3e7ed;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   UPLOAD PANEL
+   ========================================================= */
+
+.faculty-upload-panel,
+.faculty-assignment-panel {
+  margin-top: 18px;
+
+  padding: 23px;
+
+  border: 1px solid #e4e7ee;
+  border-radius: 17px;
+
+  background: #ffffff;
+
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.035);
+}
+
+.faculty-upload-header,
+.faculty-assignment-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 20px;
+}
+
+.faculty-upload-header p,
+.faculty-assignment-header p {
+  margin: 0 0 6px;
+
+  color: #7c3aed;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+
+  text-transform: uppercase;
+}
+
+.faculty-upload-header h4,
+.faculty-assignment-header h4 {
+  margin: 0 0 5px;
+
+  color: #172033;
+
+  font-size: 16px;
+  font-weight: 750;
+}
+
+.faculty-upload-header small,
+.faculty-assignment-header small {
+  color: #98a2b3;
+
+  font-size: 10px;
+}
+
+.faculty-close-button {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid #e1e5eb;
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #667085;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.faculty-close-button:hover {
+  background: #f5f6f8;
+  border-color: #d8dde5;
+}
+
+/* =========================================================
+   FORMS
+   ========================================================= */
+
+.faculty-upload-form,
+.faculty-assignment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.faculty-upload-form label,
+.faculty-assignment-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  color: #4b5565;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.faculty-upload-form input,
+.faculty-upload-form textarea,
+.faculty-assignment-form input,
+.faculty-assignment-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+
+  border: 1px solid #dfe3ea;
+  border-radius: 9px;
+
+  padding: 11px 12px;
+
+  outline: none;
+
+  background: #ffffff;
+  color: #172033;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.faculty-upload-form input:focus,
+.faculty-upload-form textarea:focus,
+.faculty-assignment-form input:focus,
+.faculty-assignment-form textarea:focus {
+  border-color: #9ca3af;
+
+  box-shadow: 0 0 0 3px rgba(156, 163, 175, 0.08);
+}
+
+.faculty-upload-form textarea,
+.faculty-assignment-form textarea {
+  resize: vertical;
+}
+
+.faculty-upload-form textarea {
+  min-height: 90px;
+}
+
+.faculty-assignment-form textarea {
+  min-height: 100px;
+}
+
+/* =========================================================
+   SELECTED FILE
+   ========================================================= */
+
+.selected-file {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+
+  background: #fafbfc;
+}
+
+.selected-file span {
+  font-size: 19px;
+}
+
+.selected-file strong,
+.selected-file small {
+  display: block;
+}
+
+.selected-file strong {
+  color: #374151;
+
+  font-size: 11px;
+
+  word-break: break-all;
+}
+
+.selected-file small {
+  margin-top: 3px;
+
+  color: #98a2b3;
+
+  font-size: 9px;
+}
+
+/* =========================================================
+   FORM BUTTONS
+   ========================================================= */
+
+.faculty-submit-button,
+.faculty-assignment-submit {
+  border: 0;
+  border-radius: 9px;
+
+  padding: 12px 17px;
+
+  background: #111827;
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-size: 11px;
+  font-weight: 750;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.faculty-submit-button:hover,
+.faculty-assignment-submit:hover {
+  background: #1f2937;
+  transform: translateY(-1px);
+}
+
+.faculty-submit-button:disabled,
+.faculty-assignment-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* =========================================================
+   SUCCESS / ERROR
+   ========================================================= */
+
+.faculty-upload-success,
+.faculty-upload-error {
+  padding: 10px 12px;
+
+  border-radius: 8px;
+
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.faculty-upload-success {
+  background: #ecfdf3;
+  color: #027a48;
+}
+
+.faculty-upload-error {
+  background: #fef2f2;
+  color: #b42318;
+}
+
+/* =========================================================
+   ASSIGNMENT REVIEW
+   ========================================================= */
+
+.faculty-review-panel,
+.faculty-submissions-panel {
+  margin-top: 18px;
+}
+
+.faculty-review-assignment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+
+  margin-top: 18px;
+}
+
+.faculty-review-assignment-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 18px;
+
+  padding: 16px;
+
+  border: 1px solid #edf0f4;
+  border-radius: 12px;
+
+  background: #fafbfc;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.faculty-review-assignment-card:hover {
+  background: #ffffff;
+  border-color: #dce1e8;
+  transform: translateX(2px);
+}
+
+.faculty-review-assignment-card h5 {
+  margin: 5px 0;
+
+  color: #172033;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.faculty-review-assignment-card p {
+  margin: 0 0 5px;
+
+  color: #858d9e;
+
+  font-size: 10px;
+}
+
+.faculty-review-assignment-card small {
+  color: #98a2b3;
+
+  font-size: 9px;
+}
+
+.faculty-review-button {
+  flex-shrink: 0;
+
+  border: 0;
+  border-radius: 8px;
+
+  padding: 9px 13px;
+
+  background: #111827;
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.faculty-review-button:hover {
+  background: #1f2937;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   SUBMISSIONS
+   ========================================================= */
+
+.faculty-submission-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faculty-submission-card {
+  display: grid;
+
+  grid-template-columns: minmax(0, 1fr) 300px;
+
+  gap: 22px;
+
+  padding: 18px;
+
+  border: 1px solid #e7e9ef;
+  border-radius: 12px;
+
+  background: #ffffff;
+}
+
+.faculty-submission-info > span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #98a2b3;
+
+  font-size: 8px;
+  font-weight: 750;
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+.faculty-submission-info strong {
+  display: block;
+
+  color: #172033;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.faculty-submission-info small {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #98a2b3;
+
+  font-size: 9px;
+}
+
+.faculty-submission-file {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 14px;
+  margin-bottom: 14px;
+
+  padding: 11px;
+
+  border-radius: 9px;
+
+  background: #f8fafc;
+}
+
+.faculty-submission-file > span {
+  font-size: 17px;
+}
+
+.faculty-submission-file-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.faculty-submission-file-info strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #374151;
+
+  font-size: 10px;
+
+  word-break: break-word;
+}
+
+.faculty-submission-file-info small {
+  color: #9299a7;
+
+  font-size: 8px;
+}
+
+.faculty-view-submission-button {
+  flex-shrink: 0;
+
+  border: 0;
+  border-radius: 7px;
+
+  padding: 8px 11px;
+
+  background: #111827;
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.faculty-view-submission-button:hover {
+  background: #1f2937;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   EVALUATION
+   ========================================================= */
+
+.faculty-evaluation {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.faculty-evaluation label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  color: #4b5565;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.faculty-evaluation input,
+.faculty-evaluation textarea {
+  width: 100%;
+  box-sizing: border-box;
+
+  border: 1px solid #dfe3ea;
+  border-radius: 8px;
+
+  padding: 9px 10px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: #111827;
+
+  font-family: inherit;
+
+  font-size: 10px;
+}
+
+.faculty-evaluation input:focus,
+.faculty-evaluation textarea:focus {
+  border-color: #9ca3af;
+}
+
+.faculty-evaluation textarea {
+  min-height: 72px;
+  resize: vertical;
+}
+
+.faculty-evaluate-button {
+  min-height: 38px;
+
+  border: 0;
+  border-radius: 8px;
+
+  padding: 0 13px;
+
+  background: #111827;
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-size: 9px;
+  font-weight: 750;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.faculty-evaluate-button:hover {
+  background: #1f2937;
+  transform: translateY(-1px);
+}
+
+.faculty-evaluate-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.faculty-reviewed-box {
+  padding: 14px;
+
+  border-radius: 10px;
+
+  background: #ecfdf3;
+  color: #027a48;
+}
+
+.faculty-reviewed-box strong {
+  display: block;
+
+  color: #027a48;
+
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.faculty-reviewed-box span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #15803d;
+
+  font-size: 8px;
+  font-weight: 750;
+  letter-spacing: 1px;
+}
+
+.faculty-reviewed-box p {
+  margin: 9px 0 0;
+
+  padding-top: 9px;
+
+  border-top: 1px solid #dcfce7;
+
+  color: #4b5563;
+
+  font-size: 9px;
+  line-height: 1.55;
+}
+
+/* =========================================================
+   REVIEW MODAL
+   ========================================================= */
+
+.faculty-review-modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(15, 23, 42, 0.5);
+
+  backdrop-filter: blur(5px);
+}
+
+.faculty-review-modal {
+  width: min(900px, 100%);
+  max-height: 88vh;
+
+  overflow: hidden;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 17px;
+
+  background: #ffffff;
+
+  box-shadow: 0 28px 80px rgba(15, 23, 42, 0.22);
+
+  animation: facultyModalIn 0.18s ease-out;
+}
+
+@keyframes facultyModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.99);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.faculty-review-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 21px 23px;
+
+  border-bottom: 1px solid #edf0f4;
+}
+
+.faculty-review-modal-header p {
+  margin: 0 0 5px;
+
+  color: #7c3aed;
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+
+  text-transform: uppercase;
+}
+
+.faculty-review-modal-header h3 {
+  margin: 0 0 5px;
+
+  color: #111827;
+
+  font-size: 17px;
+  font-weight: 750;
+}
+
+.faculty-review-modal-header span {
+  color: #7b8495;
+
+  font-size: 10px;
+}
+
+.faculty-review-modal-close {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid #e1e5eb;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #596273;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.faculty-review-modal-close:hover {
+  background: #f5f6f8;
+  border-color: #d7dce4;
+}
+
+.faculty-review-modal-body {
+  max-height: calc(88vh - 105px);
+
+  overflow-y: auto;
+
+  padding: 19px 23px 23px;
+}
+
+.faculty-review-loading,
+.faculty-review-empty {
+  padding: 45px 20px;
+
+  text-align: center;
+}
+
+.faculty-review-loading strong,
+.faculty-review-empty h4 {
+  display: block;
+
+  margin: 0 0 7px;
+
+  color: #111827;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.faculty-review-loading p,
+.faculty-review-empty p {
+  margin: 0;
+
+  color: #7b8495;
+
+  font-size: 10px;
+}
+
+.faculty-review-empty-icon {
+  width: 46px;
+  height: 46px;
+
+  margin: 0 auto 12px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 12px;
+
+  background: #f3f4f6;
+
+  font-size: 21px;
+}
+
+.faculty-review-error,
+.faculty-evaluation-error {
+  margin-bottom: 14px;
+
+  padding: 10px 12px;
+
+  border-radius: 8px;
+
+  background: #fef2f2;
+  color: #b42318;
+
+  font-size: 10px;
+}
+
+.faculty-evaluation-success {
+  margin-top: 14px;
+
+  padding: 10px 12px;
+
+  border-radius: 8px;
+
+  background: #ecfdf3;
+  color: #15803d;
+
+  font-size: 10px;
+  font-weight: 650;
+}
+
+/* =========================================================
+   MODAL SUBMISSION CARD
+   ========================================================= */
+
+.faculty-submission-student {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 13px;
+}
+
+.faculty-submission-avatar {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 10px;
+
+  background: #f1f3f6;
+  color: #374151;
+
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.faculty-submission-student strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #111827;
+
+  font-size: 11px;
+}
+
+.faculty-submission-student span {
+  display: block;
+
+  color: #9299a7;
+
+  font-size: 9px;
+}
+
+.faculty-existing-evaluation {
+  margin-bottom: 14px;
+
+  padding: 11px 12px;
+
+  border-radius: 8px;
+
+  background: #ecfdf3;
+}
+
+.faculty-existing-evaluation strong {
+  color: #15803d;
+
+  font-size: 10px;
+}
+
+.faculty-existing-evaluation p {
+  margin: 5px 0 0;
+
+  color: #4b5563;
+
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   MODAL EVALUATION SECTION
+   ========================================================= */
+
+.faculty-evaluation-section {
+  display: grid;
+
+  grid-template-columns: 130px 1fr auto;
+
+  align-items: end;
+
+  gap: 11px;
+
+  padding-top: 14px;
+
+  border-top: 1px solid #edf0f4;
+}
+
+.faculty-evaluation-field label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #596273;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.faculty-evaluation-field input,
+.faculty-evaluation-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+
+  border: 1px solid #dfe3ea;
+  border-radius: 8px;
+
+  padding: 9px;
+
+  outline: none;
+
+  background: #ffffff;
+  color: #111827;
+
+  font-family: inherit;
+
+  font-size: 10px;
+}
+
+.faculty-evaluation-field input:focus,
+.faculty-evaluation-field textarea:focus {
+  border-color: #9ca3af;
+}
+
+.faculty-evaluation-field textarea {
+  min-height: 42px;
+
+  resize: vertical;
+}
+
+/* =========================================================
+   SCROLLBARS
+   ========================================================= */
+
+.faculty-sidebar::-webkit-scrollbar,
+.faculty-review-modal-body::-webkit-scrollbar {
+  width: 4px;
+}
+
+.faculty-sidebar::-webkit-scrollbar-track,
+.faculty-review-modal-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.faculty-sidebar::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 999px;
+}
+
+.faculty-review-modal-body::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 999px;
+}
+
+/* =========================================================
+   RESPONSIVE — 1000px
+   ========================================================= */
+
+@media (max-width: 1000px) {
+  .faculty-sidebar {
+    width: 220px;
+    min-width: 220px;
+  }
+
+  .faculty-main {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .faculty-submission-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — 800px
+   ========================================================= */
+
+@media (max-width: 800px) {
+  .faculty-sidebar {
+    width: 210px;
+    min-width: 210px;
+  }
+
+  .faculty-main {
+    padding: 0 18px 30px;
+  }
+
+  .faculty-course-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .faculty-class-info {
+    min-width: 0;
+
+    text-align: left;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — 760px
+   ========================================================= */
+
+@media (max-width: 760px) {
+  .faculty-app {
+    display: block;
+  }
+
+  .faculty-sidebar {
+    position: relative;
+
+    width: 100%;
+    min-width: 100%;
+    min-height: auto;
+    height: auto;
+
+    border-right: 0;
+    border-bottom: 1px solid #1f2937;
+
+    padding: 15px 12px;
+  }
+
+  .faculty-brand {
+    padding: 0 6px 15px;
+  }
+
+  .faculty-navigation {
+    display: flex;
+    flex-direction: row;
+
+    gap: 5px;
+
+    overflow-x: auto;
+
+    padding-bottom: 2px;
+  }
+
+  .faculty-nav-item {
+    width: auto;
+    min-width: max-content;
+
+    min-height: 40px;
+
+    padding: 9px 11px;
+  }
+
+  .faculty-sidebar-bottom {
+    display: none;
+  }
+
+  .faculty-main {
+    padding: 0 14px 30px;
+  }
+
+  .faculty-topbar {
+    min-height: 64px;
+  }
+
+  .faculty-topbar h2 {
+    font-size: 21px;
+  }
+
+  .faculty-welcome {
+    margin-top: 17px;
+    padding: 22px;
+  }
+
+  .faculty-welcome h3 {
+    font-size: 23px;
+  }
+
+  .faculty-review-modal-overlay {
+    padding: 12px;
+  }
+
+  .faculty-review-modal-header {
+    padding: 18px;
+  }
+
+  .faculty-review-modal-body {
+    padding: 16px;
+  }
+
+  .faculty-evaluation-section {
+    grid-template-columns: 1fr;
+  }
+
+  .faculty-evaluate-button {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — 650px
+   ========================================================= */
+
+@media (max-width: 650px) {
+  .faculty-review-assignment-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .faculty-review-button {
+    width: 100%;
+  }
+
+  .faculty-submission-file {
+    align-items: flex-start;
+  }
+
+  .faculty-view-submission-button {
+    align-self: center;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — 600px
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .faculty-main {
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+
+  .faculty-topbar {
+    min-height: 58px;
+  }
+
+  .faculty-profile strong,
+  .faculty-profile span {
+    display: none;
+  }
+
+  .faculty-avatar {
+    width: 35px;
+    height: 35px;
+  }
+
+  .faculty-welcome {
+    border-radius: 14px;
+    padding: 19px;
+  }
+
+  .faculty-welcome h3 {
+    font-size: 21px;
+  }
+
+  .faculty-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+  }
+
+  .faculty-stat-card {
+    padding: 15px;
+    border-radius: 13px;
+  }
+
+  .faculty-stat-card strong {
+    font-size: 21px;
+  }
+
+  .faculty-panel,
+  .faculty-upload-panel,
+  .faculty-assignment-panel {
+    padding: 17px;
+    border-radius: 14px;
+  }
+
+  .faculty-panel-header h4 {
+    font-size: 15px;
+  }
+
+  .faculty-upload-header,
+  .faculty-assignment-header {
+    gap: 12px;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.faculty-nav-item:focus-visible,
+.faculty-upload-button:focus-visible,
+.faculty-assignment-button:focus-visible,
+.faculty-submit-button:focus-visible,
+.faculty-assignment-submit:focus-visible,
+.faculty-review-button:focus-visible,
+.faculty-evaluate-button:focus-visible,
+.faculty-close-button:focus-visible,
+.faculty-review-modal-close:focus-visible,
+.faculty-view-submission-button:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .faculty-nav-item,
+  .faculty-stat-card,
+  .faculty-course-card,
+  .faculty-review-assignment-card,
+  .faculty-upload-button,
+  .faculty-assignment-button,
+  .faculty-submit-button,
+  .faculty-assignment-submit,
+  .faculty-review-button,
+  .faculty-evaluate-button,
+  .faculty-view-submission-button {
+    transition: none;
+  }
+
+  .faculty-review-modal {
+    animation: none;
+  }
+}

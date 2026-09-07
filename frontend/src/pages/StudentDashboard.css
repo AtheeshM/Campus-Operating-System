@@ -1,0 +1,1135 @@
+/* =========================================================
+   CAMPUSOS — STUDENT DASHBOARD
+   Premium Command Center UI
+   ========================================================= */
+
+.student-app {
+  min-height: 100vh;
+  display: flex;
+  background:
+    radial-gradient(circle at 75% 0%, rgba(99, 102, 241, 0.08), transparent 28%),
+    #f5f7fb;
+  color: #172033;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.student-sidebar {
+  width: 250px;
+  min-width: 250px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #111827;
+  color: #ffffff;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  z-index: 20;
+}
+
+.student-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 26px 22px 28px;
+}
+
+.student-brand-logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ffffff, #dbe3f0);
+  color: #111827;
+  font-size: 20px;
+  font-weight: 800;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.student-brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.student-brand-text strong {
+  font-size: 17px;
+  font-weight: 750;
+  letter-spacing: -0.4px;
+}
+
+.student-brand-text span {
+  font-size: 11px;
+  color: #9ca3af;
+  letter-spacing: 0.4px;
+}
+
+.student-navigation {
+  flex: 1;
+  padding: 6px 14px;
+  overflow-y: auto;
+}
+
+.student-nav-section-title {
+  padding: 16px 12px 9px;
+  color: #6b7280;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+
+.student-nav-item {
+  width: 100%;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 13px;
+  margin-bottom: 4px;
+  border: 0;
+  border-radius: 11px;
+  background: transparent;
+  color: #9ca3af;
+  font-size: 13px;
+  font-weight: 550;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.student-nav-item span {
+  width: 21px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.student-nav-item:hover {
+  background: rgba(255, 255, 255, 0.07);
+  color: #ffffff;
+  transform: translateX(2px);
+}
+
+.student-nav-item:hover span {
+  color: #ffffff;
+}
+
+.student-nav-item.active {
+  background: #ffffff;
+  color: #111827;
+  font-weight: 700;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.14);
+}
+
+.student-nav-item.active span {
+  color: #111827;
+}
+
+.student-sidebar-footer {
+  padding: 16px 14px 20px;
+}
+
+.student-sidebar-footer-text {
+  padding: 14px;
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #9ca3af;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.student-main-content {
+  flex: 1;
+  min-width: 0;
+  padding: 0 32px 40px;
+}
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.student-topbar {
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e7eaf0;
+}
+
+.student-topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.student-topbar-title {
+  font-size: 13px;
+  font-weight: 650;
+  color: #667085;
+}
+
+.student-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.student-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.student-profile-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111827;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.student-profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.student-profile-info strong {
+  font-size: 12px;
+  color: #172033;
+}
+
+.student-profile-info span {
+  font-size: 10px;
+  color: #98a2b3;
+}
+
+/* =========================================================
+   WELCOME / HERO
+   ========================================================= */
+
+.student-welcome-section {
+  margin-top: 26px;
+  padding: 30px 32px;
+  border: 1px solid #e5e8ef;
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 85% 10%, rgba(99, 102, 241, 0.12), transparent 28%),
+    linear-gradient(135deg, #ffffff 0%, #f9fafc 100%);
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.055);
+  position: relative;
+  overflow: hidden;
+}
+
+.student-welcome-section::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  right: -80px;
+  bottom: -100px;
+  border-radius: 50%;
+  background: rgba(17, 24, 39, 0.035);
+}
+
+.student-welcome-eyebrow {
+  margin: 0 0 7px;
+  color: #7c3aed;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.student-welcome-section h1 {
+  margin: 0;
+  color: #111827;
+  font-size: clamp(25px, 3vw, 34px);
+  line-height: 1.15;
+  letter-spacing: -1.1px;
+  font-weight: 780;
+}
+
+.student-welcome-section p {
+  max-width: 650px;
+  margin: 11px 0 0;
+  color: #667085;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+/* =========================================================
+   STAT CARDS
+   ========================================================= */
+
+.student-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+  margin-top: 18px;
+}
+
+.student-stat-card {
+  min-width: 0;
+  padding: 21px;
+  border: 1px solid #e5e8ef;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.035);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.student-stat-card:hover {
+  transform: translateY(-3px);
+  border-color: #d7dce5;
+  box-shadow: 0 15px 32px rgba(15, 23, 42, 0.07);
+}
+
+.student-stat-label {
+  color: #98a2b3;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.student-stat-value {
+  margin-top: 8px;
+  color: #111827;
+  font-size: 25px;
+  line-height: 1;
+  font-weight: 780;
+  letter-spacing: -0.8px;
+}
+
+.student-stat-subtext {
+  margin-top: 8px;
+  color: #667085;
+  font-size: 11px;
+}
+
+/* =========================================================
+   DASHBOARD GRID
+   ========================================================= */
+
+.student-dashboard-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.student-panel {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid #e5e8ef;
+  border-radius: 17px;
+  background: #ffffff;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.035);
+}
+
+.student-panel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.student-panel-header h2,
+.student-panel-header h3 {
+  margin: 0;
+  color: #172033;
+  font-size: 15px;
+  font-weight: 750;
+  letter-spacing: -0.25px;
+}
+
+.student-panel-header p {
+  margin: 4px 0 0;
+  color: #98a2b3;
+  font-size: 11px;
+}
+
+/* =========================================================
+   COURSE LIST
+   ========================================================= */
+
+.student-course-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.student-course-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 13px 14px;
+  border: 1px solid #edf0f4;
+  border-radius: 12px;
+  background: #fafbfc;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.student-course-row:hover {
+  background: #ffffff;
+  border-color: #dfe3ea;
+  transform: translateX(2px);
+}
+
+.student-course-main {
+  min-width: 0;
+}
+
+.student-course-code {
+  color: #7c3aed;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.student-course-name {
+  margin-top: 3px;
+  color: #172033;
+  font-size: 12px;
+  font-weight: 650;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.student-course-meta {
+  margin-top: 3px;
+  color: #98a2b3;
+  font-size: 10px;
+}
+
+.student-course-credits {
+  flex-shrink: 0;
+  padding: 5px 8px;
+  border-radius: 7px;
+  background: #eef2f7;
+  color: #475467;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   CONTINUE LEARNING
+   ========================================================= */
+
+.student-learning-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 190px;
+}
+
+.student-learning-content h3 {
+  margin: 0;
+  color: #172033;
+  font-size: 15px;
+  font-weight: 750;
+}
+
+.student-learning-content p {
+  margin: 9px 0 0;
+  color: #667085;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.student-learning-progress {
+  margin-top: 20px;
+}
+
+.student-learning-progress-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7px;
+  color: #667085;
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.student-learning-progress-bar {
+  width: 100%;
+  height: 7px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #edf0f4;
+}
+
+.student-learning-progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: #111827;
+  transition: width 0.45s ease;
+}
+
+.student-learning-button,
+.student-learning-content button {
+  width: 100%;
+  margin-top: 18px;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 10px;
+  background: #111827;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.student-learning-button:hover,
+.student-learning-content button:hover {
+  background: #1f2937;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   LEARNING HUB
+   ========================================================= */
+
+.student-learning-hub {
+  margin-top: 18px;
+}
+
+/* =========================================================
+   LEARNING INSIGHTS
+   ========================================================= */
+
+.student-insights-panel {
+  margin-top: 18px;
+  padding: 24px;
+  border: 1px solid #e3e7ee;
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, #ffffff, #fbfcfe);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+}
+
+.student-insights-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.student-insights-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.student-insights-label {
+  color: #7c3aed;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.student-insights-header h2 {
+  margin: 0;
+  color: #111827;
+  font-size: 19px;
+  font-weight: 780;
+  letter-spacing: -0.5px;
+}
+
+.student-insights-header p {
+  margin: 0;
+  color: #98a2b3;
+  font-size: 11px;
+}
+
+.student-insight-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 27px;
+  padding: 5px 10px;
+  border: 1px solid #e4e7ec;
+  border-radius: 999px;
+  background: #f8fafc;
+  color: #667085;
+  font-size: 9px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.student-insight-status.strong {
+  border-color: #d1fadf;
+  background: #ecfdf3;
+  color: #027a48;
+}
+
+.student-insight-status.practice {
+  border-color: #fedf89;
+  background: #fffaeb;
+  color: #b54708;
+}
+
+.student-insight-status.weak {
+  border-color: #fecaca;
+  background: #fef2f2;
+  color: #b42318;
+}
+
+.student-insight-status.neutral {
+  border-color: #e4e7ec;
+  background: #f8fafc;
+  color: #667085;
+}
+
+/* =========================================================
+   INSIGHT METRICS
+   ========================================================= */
+
+.student-insight-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.student-insight-metric {
+  padding: 14px;
+  border: 1px solid #edf0f4;
+  border-radius: 12px;
+  background: #fafbfc;
+}
+
+.student-insight-metric-label {
+  color: #98a2b3;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.student-insight-metric-value {
+  margin-top: 6px;
+  color: #172033;
+  font-size: 18px;
+  font-weight: 780;
+  letter-spacing: -0.4px;
+}
+
+/* =========================================================
+   INSIGHT LOADING
+   ========================================================= */
+
+.student-insights-loading {
+  padding: 24px;
+  text-align: center;
+  border: 1px dashed #dfe3ea;
+  border-radius: 12px;
+  background: #fafbfc;
+  color: #98a2b3;
+  font-size: 11px;
+}
+
+/* =========================================================
+   COURSE INSIGHTS
+   ========================================================= */
+
+.student-course-insights {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.student-course-insight-row {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.9fr) minmax(220px, 1.6fr) auto;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 15px;
+  border: 1px solid #edf0f4;
+  border-radius: 12px;
+  background: #ffffff;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.student-course-insight-row:hover {
+  border-color: #dce1e8;
+  box-shadow: 0 7px 18px rgba(15, 23, 42, 0.045);
+  transform: translateY(-1px);
+}
+
+.student-insight-course {
+  min-width: 0;
+}
+
+.student-insight-course-code {
+  color: #7c3aed;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+}
+
+.student-insight-course-name {
+  margin-top: 3px;
+  color: #172033;
+  font-size: 11px;
+  font-weight: 650;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.student-insight-assignment {
+  min-width: 0;
+}
+
+.student-insight-assignment-title {
+  color: #344054;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.student-insight-assignment-meta {
+  margin-top: 4px;
+  color: #98a2b3;
+  font-size: 9px;
+}
+
+.student-course-insight-result {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 9px;
+  min-width: 145px;
+}
+
+.student-course-insight-result strong {
+  color: #172033;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.student-course-insight-result span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 82px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: #f2f4f7;
+  color: #667085;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.student-course-insight-result span.strong {
+  background: #ecfdf3;
+  color: #027a48;
+}
+
+.student-course-insight-result span.practice {
+  background: #fffaeb;
+  color: #b54708;
+}
+
+.student-course-insight-result span.weak {
+  background: #fef2f2;
+  color: #b42318;
+}
+
+/* =========================================================
+   INSIGHT BOX / SUPPORTING STYLES
+   ========================================================= */
+
+.student-insight-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.student-insight-box {
+  padding: 14px;
+  border: 1px solid #edf0f4;
+  border-radius: 12px;
+  background: #fafbfc;
+}
+
+.student-insight-box strong {
+  color: #172033;
+  font-size: 11px;
+}
+
+.student-insight-box p {
+  margin: 5px 0 0;
+  color: #667085;
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+/* =========================================================
+   RECOMMENDATION
+   ========================================================= */
+
+.student-insight-recommendation {
+  margin-top: 18px;
+  padding: 16px 18px;
+  border: 1px solid #e5e8ef;
+  border-radius: 13px;
+  background:
+    linear-gradient(135deg, #f8fafc, #ffffff);
+}
+
+.student-insight-recommendation-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+
+.student-insight-recommendation-header span {
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  background: #111827;
+  color: #ffffff;
+  font-size: 11px;
+}
+
+.student-insight-recommendation-header strong {
+  color: #172033;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.student-insight-recommendation p {
+  margin: 0;
+  color: #667085;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   ERROR / EMPTY STATES
+   ========================================================= */
+
+.student-error-message {
+  padding: 14px;
+  border: 1px solid #fecaca;
+  border-radius: 11px;
+  background: #fef2f2;
+  color: #b42318;
+  font-size: 11px;
+}
+
+.student-empty-state {
+  padding: 26px 18px;
+  text-align: center;
+  border: 1px dashed #dfe3ea;
+  border-radius: 12px;
+  background: #fafbfc;
+  color: #98a2b3;
+  font-size: 11px;
+}
+
+/* =========================================================
+   SCROLLBARS
+   ========================================================= */
+
+.student-navigation::-webkit-scrollbar {
+  width: 4px;
+}
+
+.student-navigation::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.student-navigation::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 999px;
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .student-sidebar {
+    width: 220px;
+    min-width: 220px;
+  }
+
+  .student-main-content {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .student-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .student-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .student-course-insight-row {
+    grid-template-columns: minmax(150px, 0.8fr) minmax(180px, 1.2fr) auto;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — SMALL TABLET
+   ========================================================= */
+
+@media (max-width: 760px) {
+  .student-app {
+    display: block;
+  }
+
+  .student-sidebar {
+    position: relative;
+    width: 100%;
+    min-width: 100%;
+    min-height: auto;
+    height: auto;
+    border-right: 0;
+    border-bottom: 1px solid #1f2937;
+  }
+
+  .student-brand {
+    padding: 16px 18px;
+  }
+
+  .student-navigation {
+    display: flex;
+    gap: 6px;
+    padding: 4px 12px 12px;
+    overflow-x: auto;
+  }
+
+  .student-nav-section-title {
+    display: none;
+  }
+
+  .student-nav-item {
+    width: auto;
+    min-width: max-content;
+    margin-bottom: 0;
+    padding: 9px 11px;
+  }
+
+  .student-sidebar-footer {
+    display: none;
+  }
+
+  .student-main-content {
+    padding: 0 16px 30px;
+  }
+
+  .student-topbar {
+    height: 64px;
+  }
+
+  .student-welcome-section {
+    margin-top: 18px;
+    padding: 23px;
+  }
+
+  .student-insight-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .student-course-insight-row {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+
+  .student-course-insight-result {
+    justify-content: flex-start;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .student-main-content {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .student-topbar {
+    height: 58px;
+  }
+
+  .student-profile-info {
+    display: none;
+  }
+
+  .student-profile-avatar {
+    width: 34px;
+    height: 34px;
+  }
+
+  .student-welcome-section {
+    border-radius: 15px;
+    padding: 20px;
+  }
+
+  .student-welcome-section h1 {
+    font-size: 24px;
+  }
+
+  .student-stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .student-stat-card {
+    padding: 16px;
+    border-radius: 13px;
+  }
+
+  .student-stat-value {
+    font-size: 21px;
+  }
+
+  .student-panel,
+  .student-insights-panel {
+    padding: 17px;
+    border-radius: 14px;
+  }
+
+  .student-insights-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .student-insight-status {
+    align-self: flex-start;
+  }
+
+  .student-course-row {
+    padding: 12px;
+  }
+
+  .student-course-name {
+    max-width: 190px;
+  }
+
+  .student-insight-metrics {
+    gap: 8px;
+  }
+
+  .student-insight-metric {
+    padding: 12px;
+  }
+
+  .student-insight-metric-value {
+    font-size: 16px;
+  }
+
+  .student-course-insight-result {
+    flex-wrap: wrap;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+  .student-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .student-insight-metrics {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .student-welcome-section h1 {
+    font-size: 22px;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.student-nav-item:focus-visible,
+.student-learning-button:focus-visible,
+.student-learning-content button:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .student-nav-item,
+  .student-stat-card,
+  .student-course-row,
+  .student-course-insight-row,
+  .student-learning-button,
+  .student-learning-content button {
+    transition: none;
+  }
+
+  .student-learning-progress-fill {
+    transition: none;
+  }
+}
